@@ -1,6 +1,8 @@
 package com.nitaioanmadalin.cosmodeviceexplorer.ui.theme
 
 import android.app.Activity
+import android.content.Context
+import android.content.ContextWrapper
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -56,9 +58,9 @@ fun CosmoDeviceExplorerTheme(
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            val window = view.context.getActivity()?.window
+            window?.statusBarColor = colorScheme.primary.toArgb()
+            window?.let { WindowCompat.getInsetsController(it, view).isAppearanceLightStatusBars = darkTheme }
         }
     }
 
@@ -67,4 +69,15 @@ fun CosmoDeviceExplorerTheme(
         typography = Typography,
         content = content
     )
+}
+
+fun Context.getActivity(): Activity? {
+    var context = this
+    while (context is ContextWrapper) {
+        if (context is Activity) {
+            return context
+        }
+        context = context.baseContext
+    }
+    return null
 }

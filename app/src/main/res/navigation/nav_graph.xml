@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/devicesFragment">
+
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices.CosmoDevicesFragment">
+
+        <action
+            android:id="@+id/devices_to_details"
+            app:destination="@id/deviceInfoFragment"
+            />
+
+    </fragment>
+
+    <fragment android:id="@+id/deviceInfoFragment"
+        android:name="com.nitaioanmadalin.cosmodeviceexplorer.ui.devicedetails.DeviceDetailsFragment">
+
+        <argument
+            android:name="deviceInfo"
+            app:argType="com.nitaioanmadalin.cosmodeviceexplorer.domain.model.CosmoDevice"
+            app:nullable="false"/>
+
+    </fragment>
+</navigation>

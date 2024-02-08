@@ -1,4 +1,4 @@
-package com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase
+package com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.getdevices
 
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.network.AppResult
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.model.CosmoDevice

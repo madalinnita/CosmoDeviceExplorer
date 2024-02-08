@@ -6,13 +6,15 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.coroutine.CoroutineDispatchersProvider
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.coroutine.CoroutineDispatchersProviderImpl
+import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.log.LogProvider
+import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.log.LogProviderImpl
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.network.ConnectivityUtils
 import com.nitaioanmadalin.cosmodeviceexplorer.data.local.CosmoDevicesDatabase
 import com.nitaioanmadalin.cosmodeviceexplorer.data.remote.api.CosmoDevicesApi
 import com.nitaioanmadalin.cosmodeviceexplorer.data.repository.CosmoDevicesRepositoryImpl
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.repository.CosmoDevicesRepository
-import com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.GetCosmoDevicesUseCase
-import com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.GetCosmoDevicesUseCaseImpl
+import com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.getdevices.GetCosmoDevicesUseCase
+import com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.getdevices.GetCosmoDevicesUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -99,5 +101,11 @@ object CosmoDevicesModule {
     @Provides
     fun provideCoroutineDispatchersProvider(): CoroutineDispatchersProvider {
         return CoroutineDispatchersProviderImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideLogProvider(): LogProvider {
+        return LogProviderImpl()
     }
 }

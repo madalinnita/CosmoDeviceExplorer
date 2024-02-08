@@ -1,5 +1,6 @@
 package com.nitaioanmadalin.cosmodeviceexplorer.core.utils.lifecycle
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
@@ -30,6 +31,7 @@ fun LifecycleHandler(
 
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
+            Log.d(TAG, event.name)
             when (event) {
                 Lifecycle.Event.ON_CREATE -> curOnCreate?.invoke()
                 Lifecycle.Event.ON_START -> curOnStart?.invoke()
@@ -48,3 +50,5 @@ fun LifecycleHandler(
         }
     }
 }
+
+const val TAG = "LifecycleHandler"
