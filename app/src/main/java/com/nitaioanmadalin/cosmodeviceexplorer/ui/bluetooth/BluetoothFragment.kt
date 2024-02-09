@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.nitaioanmadalin.cosmodeviceexplorer.presentation.bluetooth.BluetoothViewModel
 import com.nitaioanmadalin.cosmodeviceexplorer.ui.base.BaseComposeWrapperFragment
+import com.nitaioanmadalin.cosmodeviceexplorer.ui.bluetooth.screen.ScanBluetoothScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

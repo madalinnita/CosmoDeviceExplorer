@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.nitaioanmadalin.cosmodeviceexplorer.presentation.cosmodevices.CosmoDevicesViewModel
 import com.nitaioanmadalin.cosmodeviceexplorer.ui.base.BaseComposeWrapperFragment
 import com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices.screen.DevicesScreen
 import dagger.hilt.android.AndroidEntryPoint

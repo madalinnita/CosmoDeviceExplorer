@@ -1,4 +1,4 @@
-package com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices
+package com.nitaioanmadalin.cosmodeviceexplorer.presentation.cosmodevices
 
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.model.CosmoDevice
 

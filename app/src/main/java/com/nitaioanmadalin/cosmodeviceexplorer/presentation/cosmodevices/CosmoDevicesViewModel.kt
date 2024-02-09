@@ -1,4 +1,4 @@
-package com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices
+package com.nitaioanmadalin.cosmodeviceexplorer.presentation.cosmodevices
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -27,7 +27,8 @@ class CosmoDevicesViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _state: MutableStateFlow<CosmoDevicesScreenState> = MutableStateFlow(
-        CosmoDevicesScreenState.Loading())
+        CosmoDevicesScreenState.Loading()
+    )
     val state: StateFlow<CosmoDevicesScreenState> = _state
 
     fun getData(context: Context) {

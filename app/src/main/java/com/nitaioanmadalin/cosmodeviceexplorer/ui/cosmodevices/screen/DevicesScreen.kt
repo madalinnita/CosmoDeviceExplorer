@@ -23,8 +23,8 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.lifecycle.LifecycleHandler
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.model.CosmoDevice
-import com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices.CosmoDevicesScreenState
-import com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices.CosmoDevicesViewModel
+import com.nitaioanmadalin.cosmodeviceexplorer.presentation.cosmodevices.CosmoDevicesScreenState
+import com.nitaioanmadalin.cosmodeviceexplorer.presentation.cosmodevices.CosmoDevicesViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

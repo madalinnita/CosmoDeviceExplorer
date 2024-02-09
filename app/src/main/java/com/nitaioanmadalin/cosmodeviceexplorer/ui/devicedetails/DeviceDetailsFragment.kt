@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DeviceDetailsFragment: BaseComposeWrapperFragment() {
 
-    val args: DeviceDetailsFragmentArgs by navArgs()
+    private val args: DeviceDetailsFragmentArgs by navArgs()
 
     @Composable
     override fun FragmentContent(modifier: Modifier) {
@@ -20,5 +20,4 @@ class DeviceDetailsFragment: BaseComposeWrapperFragment() {
             navigator = findNavController()
         )
     }
-
 }

@@ -1,4 +1,4 @@
-package com.nitaioanmadalin.cosmodeviceexplorer.ui.bluetooth
+package com.nitaioanmadalin.cosmodeviceexplorer.ui.bluetooth.screen
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
