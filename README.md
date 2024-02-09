@@ -1,4 +1,4 @@
-# Cosmo Devices Assessment
+# Cosmo Devices App
 
 Technologies used: 
 - MVVM for having a layering approach
