@@ -1,6 +1,7 @@
 package com.nitaioanmadalin.cosmodeviceexplorer.di
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -9,15 +10,18 @@ import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.coroutine.CoroutineDis
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.log.LogProvider
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.log.LogProviderImpl
 import com.nitaioanmadalin.cosmodeviceexplorer.core.utils.network.ConnectivityUtils
+import com.nitaioanmadalin.cosmodeviceexplorer.data.bluetooth.AndroidBluetoothController
 import com.nitaioanmadalin.cosmodeviceexplorer.data.local.CosmoDevicesDatabase
 import com.nitaioanmadalin.cosmodeviceexplorer.data.remote.api.CosmoDevicesApi
 import com.nitaioanmadalin.cosmodeviceexplorer.data.repository.CosmoDevicesRepositoryImpl
+import com.nitaioanmadalin.cosmodeviceexplorer.domain.bluetooth.BluetoothController
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.repository.CosmoDevicesRepository
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.getdevices.GetCosmoDevicesUseCase
 import com.nitaioanmadalin.cosmodeviceexplorer.domain.usecase.getdevices.GetCosmoDevicesUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -107,5 +111,11 @@ object CosmoDevicesModule {
     @Singleton
     fun provideLogProvider(): LogProvider {
         return LogProviderImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun providesBluetoothController(@ApplicationContext context: Context): BluetoothController {
+        return AndroidBluetoothController(context)
     }
 }

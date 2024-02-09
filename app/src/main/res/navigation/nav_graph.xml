@@ -13,6 +13,9 @@
             app:destination="@id/deviceInfoFragment"
             />
 
+        <action android:id="@+id/devices_to_bluetooth"
+            app:destination="@+id/bluetoothFragment"/>
+
     </fragment>
 
     <fragment android:id="@+id/deviceInfoFragment"
@@ -24,4 +27,7 @@
             app:nullable="false"/>
 
     </fragment>
+
+    <fragment android:id="@+id/bluetoothFragment"
+        android:name="com.nitaioanmadalin.cosmodeviceexplorer.ui.bluetooth.BluetoothFragment"/>
 </navigation>

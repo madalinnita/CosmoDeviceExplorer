@@ -20,6 +20,10 @@ class CosmoDevicesFragment: BaseComposeWrapperFragment() {
             onDeviceClicked = {
                 val action = CosmoDevicesFragmentDirections.devicesToDetails(it)
                 findNavController().navigate(action)
+            },
+            onBluetoothScanClicked = {
+                val action = CosmoDevicesFragmentDirections.devicesToBluetooth()
+                findNavController().navigate(action)
             }
         )
     }

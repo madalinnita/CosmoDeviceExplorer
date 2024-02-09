@@ -35,7 +35,8 @@ import com.nitaioanmadalin.cosmodeviceexplorer.ui.cosmodevices.CosmoDevicesViewM
 @Composable
 fun DevicesScreen(
     viewModel: CosmoDevicesViewModel,
-    onDeviceClicked: (CosmoDevice) -> Unit
+    onDeviceClicked: (CosmoDevice) -> Unit,
+    onBluetoothScanClicked: () -> Unit
 ) {
     val viewState by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -51,7 +52,7 @@ fun DevicesScreen(
         bottomBar = {
             DevicesBottomBar(
                 onScanDevicesClicked = {
-
+                    onBluetoothScanClicked.invoke()
                 }
             )
         }
