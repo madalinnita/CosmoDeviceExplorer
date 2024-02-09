@@ -30,6 +30,9 @@ class BluetoothViewModel @Inject constructor(
         _state
     ) { scannedDevices, pairedDevices, state ->
         state.copy(
+            isConnecting = state.isConnecting,
+            isConnected = state.isConnected,
+            errorMessage = state.errorMessage,
             scannedDevices = scannedDevices,
             pairedDevices = pairedDevices
         )
