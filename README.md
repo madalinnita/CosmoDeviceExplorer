@@ -4,6 +4,8 @@ Technologies used:
 - MVVM for having a layering approach
 - Hilt for dependency injection
 - Clean Architecture with use cases
+- Coroutines
+- Retrofit
 - For navigation: Jetpack navigation components with graphs
 - For UI: Jetpack Compose (only one exception is MainActivity because I wanted to create the graph through a FragmentContainerView) 
 - Room for caching API results (Single source of thruth)
